@@ -11,12 +11,10 @@ import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kids_banner from './Components/Assets/banner_kids.png';
-import ShopContextProvider from './Context/ShopContext';
 function App() {
   return (
-    <ShopContextProvider>
-      {" "}
-      {/* ✅ Wrap everything inside the provider */}
+    <div>
+
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -24,15 +22,15 @@ function App() {
           <Route
             path="/mens"
             element={<ShopCategory banner={men_banner} category="mens" />}
-          />
+            />
           <Route
             path="/womens"
             element={<ShopCategory banner={women_banner} category="womens" />}
-          />
+            />
           <Route
             path="/kids"
             element={<ShopCategory banner={kids_banner} category="kids" />}
-          />
+            />
           <Route path="/product/:productId" element={<Product />} />{" "}
           {/* 🔹 Fixed dynamic route */}
           <Route path="/cart" element={<Cart />} />
@@ -40,7 +38,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </ShopContextProvider>
+      </div>
   );
 }
 
